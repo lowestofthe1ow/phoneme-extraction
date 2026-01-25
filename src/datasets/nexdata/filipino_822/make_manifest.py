@@ -21,6 +21,8 @@ import epitran
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 
+from src.utils.file_read import read_file, get_wav_duration
+
 RANDOM_STATE = 339
 
 
@@ -68,6 +70,8 @@ data = pd.concat(
 all_train_df, test_df = train_test_split(
     data, test_size=0.1, random_state=RANDOM_STATE, shuffle=True
 )
+
+print(f"Total train data duration: {all_train_df['duration'].sum()}")
 
 # Second split: train/valid (80% / 10% (of the whole dataset))
 train_df, val_df = train_test_split(

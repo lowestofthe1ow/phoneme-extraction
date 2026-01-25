@@ -33,3 +33,8 @@ phoneme-extraction
 4. Train the SentencePiece tokenizer with `source bash/train_tokenizer.sh`.
 5. Fine-tune the `parakeet-tdt-0.6b-v3` model with
    `source bash/finetune_parakeet.sh`.
+
+> [!WARNING]
+> Dataset is currently missing a lot of data. Turns out the HuggingFace dataset
+> doesn't have all 822 hours... leaving the train split with about 1 hour of
+> data only lmao
