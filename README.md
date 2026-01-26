@@ -22,8 +22,8 @@ phoneme-extraction
 ## How to run
 
 > [!NOTE]
-> **Last updated**: 25 Jan 2026. Current approach is to fine-tune NVIDIA's
-> `parakeet-tdt-0.6b-v3` model with a phoneme-based
+> **Last updated**: 27 Jan 2026. Current approach is to fine-tune NVIDIA's
+> `stt_en_conformer_ctc_small` model with a phoneme-based
 > [SentencePiece](https://github.com/google/sentencepiece) tokenizer.
 
 1. Clone the repository and setup a virtual environment with `uv`. **Currently
@@ -31,10 +31,16 @@ phoneme-extraction
 2. Install dependencies with `uv sync`
 3. Set up datasets... (WIP)
 4. Train the SentencePiece tokenizer with `source bash/train_tokenizer.sh`.
-5. Fine-tune the `parakeet-tdt-0.6b-v3` model with
-   `source bash/finetune_parakeet.sh`.
+5. Fine-tune the `stt_en_conformer_ctc_small` model with
+   `source bash/finetune_stt_en_conformer.sh`.
+
+> [!NOTE]
+> **Regarding `parakeet-tdt-0.6b-v3`**: Currently investigating how to handle
+> this model. Current experiments use `stt_en_conformer_ctc_small`, which
+> shows rather promising results despite being orders of magnitude smaller.
 
 > [!WARNING]
 > Dataset is currently missing a lot of data. Turns out the HuggingFace dataset
 > doesn't have all 822 hours... leaving the train split with about 1 hour of
-> data only lmao
+> data only. The `stt_en_conformer_ctc_small` finetune seems to perform rather
+> well (?) all things considered.
