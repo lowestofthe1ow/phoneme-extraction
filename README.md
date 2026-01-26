@@ -44,3 +44,29 @@ phoneme-extraction
 > doesn't have all 822 hours... leaving the train split with about 1 hour of
 > data only. The `stt_en_conformer_ctc_small` finetune seems to perform rather
 > well (?) all things considered.
+
+## Experimental results
+
+Some interesting results from initial experiments...
+
+### `stt_en_conformer_ctc_small`
+
+Training configurations are as in the YAML config and batch scripts. We trained
+for 100 epochs.
+
+**Actual sample transcriptions**
+- ʔaŋ talumpati aj isaŋ uɾi ŋ kompetiʃon ŋ mɡa paɡbasa.
+- pandikit na tape aj inilalaɡaj sa manila papeɾ upaŋ mabasa ŋ lahat aŋ
+  nakasulat.
+- siɾa aŋ numeɾo ŋ plaka kaja hindi makapaɡ maneho dahil sa kontɾol ŋ tɾapiko sa
+  ɾuɾok na oɾas.
+- actual d͡ʒunioɾ hiɡh st͡ʃool aj aŋ paɡ-aaɾal ŋ mɡa baɡaj na dapat nilaŋ
+  matutunan sa senioɾ hiɡh st͡ʃool.
+
+**Predicted transcriptions**
+- ʔaŋ talumpataj isaŋ uɾi ŋ kompitʃon ŋ mɡa paɡbasa.
+- padikit na tejpaj nila laɡaj sa manilapeipeɾ upaŋ mabasa ŋ lahat aŋ nakasulat.
+- siɾa aŋ numeɾo ŋ plaka kajahindi makapaɡ maneho dahil sa kontɾol ŋ tɾapiko sa
+  ɾuɾok na oɾas.
+- ʔaŋ dinjoɾa hajs kol aj aŋ paɡ-aaɾal ŋ mɡa baɡa a dapat nal aŋ mututunan sa
+  siɲo hajs kol.
