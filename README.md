@@ -4,14 +4,21 @@ Main Git repository for phoneme extraction undergraduate research project.
 
 ## Project structure
 
-The repository is structured as follows. Directories in parentheses are ignored.
+The repository is structured as follows. Directories in parentheses are ignored
+by the .gitignore file, so make them yourself.
 
 ```
 phoneme-extraction
 ├── bash                      Bash scripts for certain tasks
 ├── config                    YAML configuration files
 ├── (data)                    Dataset files
+│   ├── nexdata
+│   │   └── filipino_822
 ├── (models)                  Model checkpoint files (.nemo, .ckpt, etc.)
+│   ├── checkpoints
+│   ├── facebook
+│   ├── nvidia
+│   └── tokenizers
 └── src
     ├── datasets              Python code for managing datasets
     ├── scripts               Python scripts for certain tasks

@@ -6,10 +6,18 @@ speech_to_text_eval.py, then shows the best and worst transcription attempts.
 import pandas as pd
 
 df = pd.read_json("evaluation_transcripts.json", lines=True)
-df = df[["text", "pred_text", "cer"]].sort_values(by="cer")
+df = df.sort_values(by="cer")
 
 pd.set_option("display.max_colwidth", None)
 pd.set_option("display.max_columns", None)
 
-print(df.head(10))
-print(df.tail(10))
+print("=" * 85)
+print("Best transcriptions (CER)")
+print("-" * 85)
+print(df.head(5))
+
+print("=" * 85)
+print("Worst transcriptions (CER)")
+print("-" * 85)
+print(df.tail(5))
+print("=" * 85)
