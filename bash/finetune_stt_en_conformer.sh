@@ -8,5 +8,5 @@ uv run src/scripts/nemo/speech_to_text_finetune.py \
     model.tokenizer.type=bpe \
     trainer.devices=-1 \
     trainer.accelerator='gpu' \
-    trainer.max_epochs=100 \
+    trainer.max_epochs=200 \
     +init_from_nemo_model="models/nvidia/stt_en_conformer_ctc_small.nemo"
