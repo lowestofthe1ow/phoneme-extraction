@@ -16,13 +16,12 @@ data/
 
 import os
 import pandas as pd
-import epitran
 
 from pathlib import Path
 from sklearn.model_selection import train_test_split
-from epitran.backoff import Backoff
 
 from src.utils.file_read import read_file, get_wav_duration
+from src.utils.g2p import G2P
 
 RANDOM_STATE = 339
 
@@ -31,8 +30,7 @@ def make_manifest(_directory):
     """Creates a manifest file for the NexData 822-hour Filipino speech corpus"""
     directory = Path(_directory)
 
-    # epi = epitran.Epitran("tgl-Latn")
-    epi = Backoff(["tgl-Latn", "eng-Latn"])
+    g2p = G2P()
 
     wav_files = [
         directory / file
@@ -49,7 +47,7 @@ def make_manifest(_directory):
         {
             "audio_filepath": sorted(wav_files),
             "text": [
-                epi.transliterate(read_file(directory / filename).strip())
+                g2p.transliterate(read_file(directory / filename).strip())
                 for filename in sorted(txt_files)
             ],
             "duration": [

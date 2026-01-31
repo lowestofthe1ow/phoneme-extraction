@@ -36,6 +36,11 @@ phoneme-extraction
 1. Clone the repository and setup a virtual environment with `uv`. **Currently
    uses Python 3.13**.
 2. Install dependencies with `uv sync`
+
+> [!INFO]
+Running Epitran for English G2P requires `flite` and its `lex_lookup`. Follow
+installation instructions [here](https://pypi.org/project/epitran/).
+
 3. Set up datasets... (WIP)
 4. Train the SentencePiece tokenizer with `source bash/train_tokenizer.sh`.
 5. Fine-tune the `stt_en_conformer_ctc_small` model with

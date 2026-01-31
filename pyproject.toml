@@ -10,6 +10,7 @@ dependencies = [
     "epitran>=1.34.0",
     "jupyter>=1.1.1",
     "lab>=8.8",
+    "lingua-language-detector>=2.1.1",
     "nemo-toolkit[asr]>=2.6.1",
     "torch>=2.9.1",
     "torchinfo>=1.8.0",
