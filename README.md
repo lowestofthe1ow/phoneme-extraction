@@ -12,7 +12,9 @@ phoneme-extraction
 ├── bash                      Bash scripts for certain tasks
 ├── config                    YAML configuration files
 ├── (data)                    Dataset files
-│   ├── nexdata
+│   ├── magichub
+│   │   └── asr-sfdusc
+│   ├── nexdata
 │   │   └── filipino_822
 ├── (models)                  Model checkpoint files (.nemo, .ckpt, etc.)
 │   ├── checkpoints
